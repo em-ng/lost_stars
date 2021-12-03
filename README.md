@@ -8,8 +8,7 @@ In Lost Stars, players will be able to:
 - control the spaceship using arrow keys
 - shoot incoming enemies with spacebar
 - unlock one constellation per level
-- replenish their health if they find a heart
-- lose if they run out of health
+- replenish health or lose if no health
 
 In addition, this project will include:
 - brief storyline
@@ -19,6 +18,10 @@ In addition, this project will include:
 
 ## Wireframe
 <img width="592" alt="wireframe" src="https://user-images.githubusercontent.com/91646944/144544867-6dc0a578-193d-4a40-a133-2f3c748de06c.png">
+
+- Nav links will include links to this project's GitHub repo and other references
+- Controls will include a mute button to turn the background music on or off
+- Options will allow the player to restart or exit the game
 
 ## Technologies, Libraries, APIs
 - Canvas API
@@ -33,14 +36,14 @@ In addition, this project will include:
 - Begin writing game logic
 - Add images to be used inside game
 
-### Day 2(Monday)
+### Day 2 (Monday)
 - Animate the images to implement inside game
 - Implement user controls to navigate and shoot
 
-### Day 3(Tuesday)
+### Day 3 (Tuesday)
 - Work on object interactions
 
-### Day 4(Wednesday)
+### Day 4 (Wednesday)
 - Complete all game logic
 - Add background music
 - Fix bugs
