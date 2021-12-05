@@ -34,6 +34,8 @@ export default class Spaceship {
         this.ySpeed = this.maxSpeed;
     }
 
+    moveDiagonalLeft() {}
+
     stop() {
         this.xSpeed = 0;
         this.ySpeed = 0;
