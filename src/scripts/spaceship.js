@@ -34,6 +34,11 @@ export default class Spaceship {
         this.ySpeed = this.maxSpeed;
     }
 
+    stop() {
+        this.xSpeed = 0;
+        this.ySpeed = 0;
+    }
+
     update(dT) {
         this.position.x += this.xSpeed;
         this.position.y += this.ySpeed;
