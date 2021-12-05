@@ -38,3 +38,7 @@ ul {
 body #gameView {
   border: 1px solid black;
 }
+
+img {
+  display: none;
+}

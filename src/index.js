@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const GAME_HEIGHT = 550;
 
     
-    let spaceship = new Spaceship(GAME_WIDTH, GAME_HEIGHT); 
+    let spaceship = new Spaceship(GAME_WIDTH, GAME_HEIGHT);
     new Input(spaceship);
     
     let lastTime = 0;
@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         ctx.clearRect(0, 0, 900, 550); //clear each frame
         spaceship.update(dT);
         spaceship.draw(ctx);
+        
         requestAnimationFrame(gameLoop);
     }
     gameLoop();

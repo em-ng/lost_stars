@@ -1,5 +1,6 @@
 export default class Spaceship {
     constructor(gameWidth, gameHeight) {
+        this.image = document.getElementById('img_kat');
         this.gameWidth = gameWidth;
         this.gameHeight = gameHeight;
         this.radius = 10;   
@@ -7,15 +8,16 @@ export default class Spaceship {
             x: this.radius + 50,
             y: this.gameHeight - this.radius - 50
         };
-        this.maxSpeed = 2;
+        this.maxSpeed = 5;
         this.xSpeed = 0;
         this.ySpeed = 0;
     }
 
     draw(ctx) {
-        ctx.beginPath();
-        ctx.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI);
-        ctx.stroke();
+        ctx.drawImage(this.image, this.position.x - this.radius, this.position.y-this.radius, 50, 50);
+        // ctx.beginPath();
+        // ctx.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI);
+        // ctx.stroke();
     }
 
     moveLeft() {
@@ -34,6 +36,9 @@ export default class Spaceship {
         this.ySpeed = this.maxSpeed;
     }
 
+    moveDiagonalLeft() {}
+    moveDiagonalLeft() {}
+    moveDiagonalLeft() {}
     moveDiagonalLeft() {}
 
     stop() {
