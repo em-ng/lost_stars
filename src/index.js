@@ -17,14 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let lastTime = 0;
 
-    function animate(currentTime) {
+    function animate() {
         requestAnimationFrame(animate);
-        let dT = currentTime - lastTime; //change in time, how much time has passed since
-        lastTime = currentTime; //reset lastTime so it can keep updating how much time passes in between
+        // let dT = currentTime - lastTime; //change in time, how much time has passed since
+        // lastTime = currentTime; //reset lastTime so it can keep updating how much time passes in between
         ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT); //clear each frame
-        // spaceship.update(dT);
-        // spaceship.draw(ctx);
-        game.update(dT);
+        // debugger
+        game.update();
         game.draw(ctx);
     }
 

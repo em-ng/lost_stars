@@ -4,8 +4,8 @@ export default class Projectile {
     constructor(spaceship) {
         this.radius = 3;
         this.topPosition = {
-            x: Spaceship.position.x + Spaceship.katWidth/2,
-            y: Spaceship.position.y
+            x: spaceship.position.x + spaceship.katWidth/2,
+            y: spaceship.position.y
         };
         // this.position2 = {
         //     x: Spaceship.position.x + Spaceship.katWidth/2,
@@ -13,8 +13,6 @@ export default class Projectile {
         // };
        
         this.topVelocity = {
-            x: this.katWidth,
-            y: this.gameHeight - this.katHeight - 50
         };
         // this.velocity2 = {
         //     x: this.katWidth,
@@ -23,22 +21,24 @@ export default class Projectile {
     }
 
     draw(ctx) {
+        // debugger
         ctx.beginPath();
-        ctx.arc(this.position1.x, this.position1.y, this.radius, 0, 2 * Math.PI);
         ctx.fillStyle = 'blue';
+        ctx.arc(this.topPosition.x, this.topPosition.y, this.radius, 0, 2 * Math.PI);
+        ctx.fill();
         ctx.closePath();
 
-        ctx.beginPath();
-        ctx.arc(this.position2.x, this.position2.y, this.radius, 0, 2 * Math.PI);
-        ctx.fillStyle = 'blue';
-        ctx.closePath();
+        // ctx.beginPath();
+        // ctx.arc(this.position2.x, this.position2.y, this.radius, 0, 2 * Math.PI);
+        // ctx.fillStyle = 'blue';
+        // ctx.closePath();
     }
 
-    update(dT) {
-        this.position1.x += this.velocity1.x;
-        this.position1.y += this.velocity1.y;
-        this.position2.x += this.velocity2.x;
-        this.position2.y += this.velocity2.y;
+    update() {
+        this.topPosition.x += this.topVelocity.x;
+        this.topPosition.y += this.topVelocity.y;
+        // this.position2.x += this.velocity2.x;
+        // this.position2.y += this.velocity2.y;
     }
 }
 

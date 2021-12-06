@@ -1,10 +1,11 @@
 // import Spaceship from '/src/scripts/spaceship';
-// import Projectile from '/src/scripts/projectile';
+import Projectile from '/src/scripts/projectile';
 import Game from '/src/scripts/game';
 
 export default class Input {
     constructor(game) {
         document.addEventListener('keydown', (e) => {
+            console.log(e.key);
 
             switch(e.key) {
                 case "a":
@@ -54,18 +55,19 @@ export default class Input {
         });
 
         window.addEventListener('click', (e) => {
-            debugger
-            const angle1 = Math.atan2(e.clientY-projectile.position1.y, e.clientX-projectile.position1.x);
-            const angle2 = Math.atan2(e.clientY-projectile.position2.y, e.clientX-projectile.position2.x);
-            const velocity1 = {
-                x: Math.cos(angle1),
-                y: Math.sin(angle1)
+            const projectile = new Projectile(game.spaceship);
+            game.projectiles.push(projectile);
+            
+            const angle = Math.atan2(e.clientY-projectile.topPosition.y, e.clientX-projectile.topPosition.x);
+            // const angle2 = Math.atan2(e.clientY-projectile.position2.y, e.clientX-projectile.position2.x);
+            projectile.topVelocity = {
+                x: Math.cos(angle),
+                y: Math.sin(angle)
             }
-            const velocity2 = {
-                x: Math.cos(angle2),
-                y: Math.sin(angle2)
-            }
-            projectiles.push(new Projectile());    
+            // const velocity2 = {
+                //     x: Math.cos(angle2),
+                //     y: Math.sin(angle2)
+            // }
         })
 
         // window.addEventListener("click", function(event) {

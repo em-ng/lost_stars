@@ -18,7 +18,7 @@ export default class Spaceship {
         ctx.drawImage(this.image, this.position.x, this.position.y);
     }
 
-    update(dT) {
+    update() {
         this.position.x += this.xSpeed;
         this.position.y += this.ySpeed;
         if (this.position.x < 0) this.position.x = 0; //left wall

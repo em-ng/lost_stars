@@ -15,17 +15,17 @@ export default class Game {
         // this.projectile = new Projectile();
     }
 
-    update(dT) {
-        this.spaceship.update(dT);
-        // this.projectiles.forEach(projectile => {
-        //     projectile.update(dT)
-        // });
+    update() {
+        this.spaceship.update();
+        this.projectiles.forEach(projectile => {
+            projectile.update()
+        });
     }
 
     draw(ctx) {
         this.spaceship.draw(ctx);
-        // this.projectiles.forEach(projectile => {
-        //     projectile.draw(ctx)
-        // });
+        this.projectiles.forEach(projectile => {
+            projectile.draw(ctx)
+        });
     }
 }
