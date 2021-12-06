@@ -14,15 +14,24 @@ document.addEventListener("DOMContentLoaded", function() {
     
     let lastTime = 0;
 
-    function gameLoop(currentTime) {
+    function spaceshipLoop(currentTime) {
         let dT = currentTime - lastTime; //change in time, how much time has passed since
         lastTime = currentTime; //reset lastTime so it can keep updating how much time passes in between
-        ctx.clearRect(0, 0, 900, 550); //clear each frame
+        ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT); //clear each frame
         spaceship.update(dT);
         spaceship.draw(ctx);
         
-        requestAnimationFrame(gameLoop);
+        requestAnimationFrame(spaceshipLoop);
     }
-    gameLoop();
+    spaceshipLoop();
+
+    function projectileLoop() {
+        let dT = currentTime - lastTime;
+        lastTime = currentTime;
+        ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
+        projectile.update(dT)
+        projectile.draw(ctx);
+    }
+    projectileLoop();
     
 })
