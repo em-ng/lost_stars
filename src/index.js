@@ -1,5 +1,6 @@
 import Input from '/src/scripts/input';
 import Spaceship from '/src/scripts/spaceship';
+import Projectile from '/src/scripts/projectile';
 
 document.addEventListener("DOMContentLoaded", function() {
     const canvas = document.getElementById("gameView");

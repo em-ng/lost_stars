@@ -17,6 +17,18 @@ export default class Input {
                 case "s":
                     spaceship.moveDown();
                     break;  
+                case "a" && "w":
+                    spaceship.moveUpperLeft();
+                    break;
+                case "d" && "w":
+                    spaceship.moveUpperRight();
+                    break;
+                case "a" && "s":
+                    spaceship.moveLowerLeft();
+                    break;
+                case "s" && "d":
+                    spaceship.moveLowerRight();
+                    break;
             }
         });
 
