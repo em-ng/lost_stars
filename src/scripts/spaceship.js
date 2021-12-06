@@ -1,8 +1,8 @@
 export default class Spaceship {
-    constructor(gameWidth, gameHeight) {
+    constructor(game) { //pass in game instance
         this.image = document.getElementById('img_kat');
-        this.gameWidth = gameWidth;
-        this.gameHeight = gameHeight;
+        this.gameWidth = game.gameWidth;
+        this.gameHeight = game.gameHeight;
         this.katWidth = 50;  //change this after adding actual image
         this.katHeight = 71;  //change this after adding actual image
         this.position = {
@@ -16,9 +16,15 @@ export default class Spaceship {
 
     draw(ctx) {
         ctx.drawImage(this.image, this.position.x, this.position.y);
-        // ctx.beginPath();
-        // ctx.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI);
-        // ctx.stroke();
+    }
+
+    update(dT) {
+        this.position.x += this.xSpeed;
+        this.position.y += this.ySpeed;
+        if (this.position.x < 0) this.position.x = 0; //left wall
+        if (this.position.y < 0) this.position.y = 0; //upper wall
+        if (this.position.x  > this.gameWidth - this.katWidth) this.position.x = this.gameWidth - this.katWidth; //right wall
+        if (this.position.y > this.gameHeight - this.katHeight) this.position.y = this.gameHeight - this.katHeight; //lower wall
     }
 
     moveLeft() {
@@ -41,14 +47,17 @@ export default class Spaceship {
         this.xSpeed = -this.maxSpeed;
         this.ySpeed = -this.maxSpeed;
     }
+
     moveUpperRight() {
         this.xSpeed = this.maxSpeed;
         this.ySpeed = -this.maxSpeed;
     }
+
     moveLowerLeft() {
         this.xSpeed = -this.maxSpeed;
         this.ySpeed = this.maxSpeed;
     }
+
     moveLowerRight() {
         this.xSpeed = this.maxSpeed;
         this.ySpeed = this.maxSpeed;
@@ -57,15 +66,6 @@ export default class Spaceship {
     stop() {
         this.xSpeed = 0;
         this.ySpeed = 0;
-    }
-
-    update(dT) {
-        this.position.x += this.xSpeed;
-        this.position.y += this.ySpeed;
-        if (this.position.x < 0) this.position.x = 0; //left wall
-        if (this.position.y < 0) this.position.y = 0; //upper wall
-        if (this.position.x  > this.gameWidth - this.katWidth) this.position.x = this.gameWidth - this.katWidth; //right wall
-        if (this.position.y > this.gameHeight - this.katHeight) this.position.y = this.gameHeight - this.katHeight; //lower wall
     }
 
 }

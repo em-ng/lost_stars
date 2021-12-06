@@ -1,9 +1,8 @@
 export default class Projectile {
-    constructor(x, y, velocity, radius) {
-        this.x = x;
-        this.y = y;
+    constructor(position, velocity) {
+        this.radius = 3;
         this.velocity = velocity;
-        this.radius = radius;
+        this.position = position;
     }
 
     draw(ctx) {
@@ -14,6 +13,18 @@ export default class Projectile {
     }
 
     update(dT) {
-
+        this.position.x += this.velocity.x;
+        this.position.y += this.velocity.y;
     }
+
+    // const projectiles = [];
+
+
+
+    // window.addEventListener('click', (e) => {
+    //     console.log('go')
+    // })
+
+    
 }
+

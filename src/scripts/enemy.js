@@ -1,5 +1,5 @@
-export default class Enemy {
-    constructor() {
+// export default class Enemy {
+//     constructor() {
         
-    }
-}
+//     }
+// }
