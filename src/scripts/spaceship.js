@@ -6,7 +6,7 @@ export default class Spaceship {
         this.katWidth = 50;  //change this after adding actual image
         this.katHeight = 71;  //change this after adding actual image
         this.position = {
-            x: 50,
+            x: this.katWidth,
             y: this.gameHeight - this.katHeight - 50
         };
         this.maxSpeed = 5;

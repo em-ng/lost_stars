@@ -1,33 +1,36 @@
-import Spaceship from '/src/scripts/spaceship';
+// import Spaceship from '/src/scripts/spaceship';
+// import Projectile from '/src/scripts/projectile';
+import Game from '/src/scripts/game';
 
 export default class Input {
-    constructor(spaceship) {
+    constructor(game) {
         document.addEventListener('keydown', (e) => {
 
             switch(e.key) {
                 case "a":
-                    spaceship.moveLeft();
+                    game.spaceship.moveLeft();
                     break;
                 case "w":
-                    spaceship.moveUp();
+                    game.spaceship.moveUp();
                     break;
                 case "d":
-                    spaceship.moveRight();
+                    debugger
+                    game.spaceship.moveRight();
                     break;
                 case "s":
-                    spaceship.moveDown();
+                    game.spaceship.moveDown();
                     break;  
                 case "a" && "w":
-                    spaceship.moveUpperLeft();
+                    game.spaceship.moveUpperLeft();
                     break;
                 case "d" && "w":
-                    spaceship.moveUpperRight();
+                    game.spaceship.moveUpperRight();
                     break;
                 case "a" && "s":
-                    spaceship.moveLowerLeft();
+                    game.spaceship.moveLowerLeft();
                     break;
                 case "s" && "d":
-                    spaceship.moveLowerRight();
+                    game.spaceship.moveLowerRight();
                     break;
             }
         });
@@ -36,18 +39,42 @@ export default class Input {
 
             switch(e.key) {
                 case "a": //traveling left
-                    if (spaceship.xSpeed < 0) spaceship.stop();
+                    if (game.spaceship.xSpeed < 0) game.spaceship.stop();
                     break;
                 case "w": //traveling up
-                    if (spaceship.ySpeed < 0) spaceship.stop();
+                    if (game.spaceship.ySpeed < 0) game.spaceship.stop();
                     break;
                 case "d": //traveling right
-                    if (spaceship.xSpeed > 0) spaceship.stop();
+                    if (game.spaceship.xSpeed > 0) game.spaceship.stop();
                     break;
                 case "s": //traveling dwn
-                    if (spaceship.ySpeed > 0) spaceship.stop();
+                    if (game.spaceship.ySpeed > 0) game.spaceship.stop();
                     break;  
             }
         });
+
+        window.addEventListener('click', (e) => {
+            debugger
+            const angle1 = Math.atan2(e.clientY-projectile.position1.y, e.clientX-projectile.position1.x);
+            const angle2 = Math.atan2(e.clientY-projectile.position2.y, e.clientX-projectile.position2.x);
+            const velocity1 = {
+                x: Math.cos(angle1),
+                y: Math.sin(angle1)
+            }
+            const velocity2 = {
+                x: Math.cos(angle2),
+                y: Math.sin(angle2)
+            }
+            projectiles.push(new Projectile());    
+        })
+
+        // window.addEventListener("click", function(event) {
+        //     const canvasEl = document.getElementById('gameView');
+        //     const ctx = canvasEl.getContext('2d');
+        //     ctx.fillStyle = '#000';
+        //     ctx.fillRect(event.clientX, event.clientY, 10, 10);
+        // }) /// just adds a box when it clicks TEST FOR WHERE I AM CLICKING?
+
+
     }
 }
