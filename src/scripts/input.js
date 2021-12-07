@@ -1,5 +1,5 @@
 // import Spaceship from '/src/scripts/spaceship';
-import Projectile from '/src/scripts/projectile';
+// import Projectile from '/src/scripts/projectile';
 import Game from '/src/scripts/game';
 
 export default class Input {
@@ -55,17 +55,19 @@ export default class Input {
         });
 
         window.addEventListener('click', (e) => {
-            const projectile = new Projectile(game.spaceship);
-            // const projectile2 = new Projectile(game.spaceship);
-            game.projectiles.push(projectile);
+            game.spaceship.fire(e);
+            // const projectile = new Projectile(game.spaceship);
+            // // const projectile2 = new Projectile(game.spaceship);
+            // game.projectiles.push(projectile);
 
-            const angle = Math.atan2(e.clientY-projectile.position1.y, e.clientX-projectile.position1.x);
-            // const angle2 = Math.atan2(e.clientY-projectile2.position2.y, e.clientX-projectile2.position2.x);
+            // const angle = Math.atan2(e.clientY-projectile.position1.y, e.clientX-projectile.position1.x);
+            // // const angle2 = Math.atan2(e.clientY-projectile2.position2.y, e.clientX-projectile2.position2.x);
 
-            projectile.velocity = {
-                x: Math.cos(angle) * 5,
-                y: Math.sin(angle) * 5
-            }
+            // projectile.velocity = {
+            //     x: Math.cos(angle) * 5,
+            //     y: Math.sin(angle) * 5
+            // }
+
             // projectile2.velocity = {
             //     x: Math.cos(angle2),
             //     y: Math.sin(angle2)

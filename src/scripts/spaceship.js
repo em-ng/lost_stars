@@ -1,6 +1,9 @@
+import Projectile from '/src/scripts/projectile';
+
 export default class Spaceship {
     constructor(game) { //pass in game instance
         this.image = document.getElementById('img_kat');
+        this.game = game;
         this.gameWidth = game.gameWidth;
         this.gameHeight = game.gameHeight;
         this.katWidth = 50;  //change this after adding actual image
@@ -66,6 +69,20 @@ export default class Spaceship {
     stop() {
         this.xSpeed = 0;
         this.ySpeed = 0;
+    }
+
+    fire(e) {
+        const projectile = new Projectile(this);
+        // const projectile2 = new Projectile(game.spaceship);
+        this.game.projectiles.push(projectile);
+
+        const angle = Math.atan2(e.clientY-projectile.position1.y, e.clientX-projectile.position1.x);
+        // const angle2 = Math.atan2(e.clientY-projectile2.position2.y, e.clientX-projectile2.position2.x);
+
+        projectile.velocity = {
+            x: Math.cos(angle) * 5,
+            y: Math.sin(angle) * 5
+        }
     }
 
 }
