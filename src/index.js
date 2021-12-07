@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let game = new Game(GAME_WIDTH, GAME_HEIGHT);
     game.start();
+    game.spawnEnemies();
 
     // let spaceship = new Spaceship(GAME_WIDTH, GAME_HEIGHT);
     // new Input(spaceship);

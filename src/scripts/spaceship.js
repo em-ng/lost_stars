@@ -1,4 +1,5 @@
 import Projectile from '/src/scripts/projectile';
+import Game from '/src/scripts/game';
 
 export default class Spaceship {
     constructor(game) { //pass in game instance

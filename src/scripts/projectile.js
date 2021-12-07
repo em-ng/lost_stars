@@ -16,7 +16,6 @@ export default class Projectile {
     }
 
     draw(ctx) {
-        // debugger
         ctx.beginPath();
         ctx.fillStyle = 'gold';
         ctx.arc(this.position1.x, this.position1.y, this.radius, 0, 2 * Math.PI);
