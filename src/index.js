@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const ctx = canvas.getContext('2d');
     const GAME_WIDTH = 900;
     const GAME_HEIGHT = 550;
+    // const background = document.getElementById("background");
+    // ctx.drawImage(background, 0, 0)
 
     let game = new Game(GAME_WIDTH, GAME_HEIGHT);
     game.start();
