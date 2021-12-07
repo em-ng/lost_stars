@@ -7,12 +7,19 @@ export default class Game {
         this.gameWidth = gameWidth;
         this.gameHeight = gameHeight;
         this.projectiles = [];
+        this.enemies = [];
         this.spaceship = new Spaceship(this); //takes in a game instance
     }
 
     start() {
         new Input(this);
         // this.projectile = new Projectile();
+    }
+
+    spawnEnemies() {//spawn senemies right side of the canvas
+        setInterval(() => {
+
+        })
     }
 
     update() {
