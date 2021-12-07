@@ -4,13 +4,13 @@ export default class Projectile {
     constructor(spaceship) {
         this.radius = 6;
         this.position1 = {
-            x: spaceship.position.x + spaceship.katWidth/2,
+            x: spaceship.position.x + spaceship.shipWidth/2,
             y: spaceship.position.y,
-            y2: spaceship.position.y + Spaceship.katHeight
+            y2: spaceship.position.y + Spaceship.shipHeight
         };
         this.position2 = {
-            x: spaceship.position.x + spaceship.katWidth/2,
-            y: spaceship.position.y + spaceship.katHeight
+            x: spaceship.position.x + spaceship.shipWidth/2,
+            y: spaceship.position.y + spaceship.shipHeight
         };
         this.velocity = {};
     }

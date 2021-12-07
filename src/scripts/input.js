@@ -15,7 +15,6 @@ export default class Input {
                     game.spaceship.moveUp();
                     break;
                 case "d":
-                    debugger
                     game.spaceship.moveRight();
                     break;
                 case "s":

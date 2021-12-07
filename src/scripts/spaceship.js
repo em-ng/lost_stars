@@ -2,15 +2,15 @@ import Projectile from '/src/scripts/projectile';
 
 export default class Spaceship {
     constructor(game) { //pass in game instance
-        this.image = document.getElementById('img_kat');
+        this.image = document.getElementById('img_ship');
         this.game = game;
         this.gameWidth = game.gameWidth;
         this.gameHeight = game.gameHeight;
-        this.katWidth = 50;  //change this after adding actual image
-        this.katHeight = 71;  //change this after adding actual image
+        this.shipWidth = 150;  //change this after adding actual image
+        this.shipHeight = 68;  //change this after adding actual image
         this.position = {
-            x: this.katWidth,
-            y: this.gameHeight - this.katHeight - 50
+            x: this.shipWidth,
+            y: this.gameHeight - this.shipHeight - 50
         };
         this.maxSpeed = 5;
         this.xSpeed = 0;
@@ -26,8 +26,8 @@ export default class Spaceship {
         this.position.y += this.ySpeed;
         if (this.position.x < 0) this.position.x = 0; //left wall
         if (this.position.y < 0) this.position.y = 0; //upper wall
-        if (this.position.x  > this.gameWidth - this.katWidth) this.position.x = this.gameWidth - this.katWidth; //right wall
-        if (this.position.y > this.gameHeight - this.katHeight) this.position.y = this.gameHeight - this.katHeight; //lower wall
+        if (this.position.x  > this.gameWidth - this.shipWidth) this.position.x = this.gameWidth - this.shipWidth; //right wall
+        if (this.position.y > this.gameHeight - this.shipHeight) this.position.y = this.gameHeight - this.shipHeight; //lower wall
     }
 
     moveLeft() {
