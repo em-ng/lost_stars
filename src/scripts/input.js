@@ -56,17 +56,19 @@ export default class Input {
 
         window.addEventListener('click', (e) => {
             const projectile = new Projectile(game.spaceship);
+            // const projectile2 = new Projectile(game.spaceship);
             game.projectiles.push(projectile);
-            
-            const angle = Math.atan2(e.clientY-projectile.topPosition.y, e.clientX-projectile.topPosition.x);
-            // const angle2 = Math.atan2(e.clientY-projectile.position2.y, e.clientX-projectile.position2.x);
-            projectile.topVelocity = {
-                x: Math.cos(angle),
-                y: Math.sin(angle)
+
+            const angle = Math.atan2(e.clientY-projectile.position1.y, e.clientX-projectile.position1.x);
+            // const angle2 = Math.atan2(e.clientY-projectile2.position2.y, e.clientX-projectile2.position2.x);
+
+            projectile.velocity = {
+                x: Math.cos(angle) * 5,
+                y: Math.sin(angle) * 5
             }
-            // const velocity2 = {
-                //     x: Math.cos(angle2),
-                //     y: Math.sin(angle2)
+            // projectile2.velocity = {
+            //     x: Math.cos(angle2),
+            //     y: Math.sin(angle2)
             // }
         })
 
@@ -76,7 +78,5 @@ export default class Input {
         //     ctx.fillStyle = '#000';
         //     ctx.fillRect(event.clientX, event.clientY, 10, 10);
         // }) /// just adds a box when it clicks TEST FOR WHERE I AM CLICKING?
-
-
     }
 }

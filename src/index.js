@@ -1,5 +1,5 @@
 import Game from '/src/scripts/game';
-import Projectile from '/src/scripts/projectile';
+// import Projectile from '/src/scripts/projectile';
 // import Input from '/src/scripts/input';
 // import Spaceship from '/src/scripts/spaceship';
 
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // let spaceship = new Spaceship(GAME_WIDTH, GAME_HEIGHT);
     // new Input(spaceship);
 
-    let lastTime = 0;
+    // let lastTime = 0;
 
     function animate() {
         requestAnimationFrame(animate);
@@ -29,11 +29,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     animate();
 
-    // window.addEventListener("click", function(event) {
-    //     const canvasEl = document.getElementById('gameView');
-    //     const ctx = canvasEl.getContext('2d');
-    //     ctx.fillStyle = '#000';
-    //     ctx.fillRect(event.clientX, event.clientY, 10, 10);
-    // }) /// just adds a box when it clicks TEST FOR WHERE I AM CLICKING?
 })
 
