@@ -17,7 +17,7 @@ export default class Projectile {
 
     draw(ctx) {
         ctx.beginPath();
-        ctx.fillStyle = 'gold';
+        ctx.fillStyle = 'plum';
         ctx.arc(this.position1.x, this.position1.y, this.radius, 0, 2 * Math.PI);
         ctx.arc(this.position2.x, this.position2.y, this.radius, 0, 2 * Math.PI);
         ctx.fill();

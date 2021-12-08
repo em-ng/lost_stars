@@ -75,6 +75,7 @@ export default class Spaceship {
     fire(e) {
         const projectile = new Projectile(this);
         // const projectile2 = new Projectile(game.spaceship);
+        // debugger
         this.game.projectiles.push(projectile);
 
         const angle = Math.atan2(e.clientY-projectile.position1.y, e.clientX-projectile.position1.x);

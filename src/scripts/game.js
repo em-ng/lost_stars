@@ -30,9 +30,6 @@ export default class Game {
         }, 2000)
     }
 
-    // this.enemyWidth = 50;
-    // this.enemyHeight = 35;
-
     update() {//updates everything
         this.spaceship.update();
 
@@ -42,9 +39,16 @@ export default class Game {
 
         this.enemies.forEach((enemy, eIdx) => {
             enemy.update()
+            const dist = Math.hypot(this.spaceship.position.x - enemy.x + (enemy.enemyWidth/2), this.spaceship.position.y - enemy.y - (enemy.enemyHeight/2));
+            if (dist - (enemy.enemyWidth) < 1 || dist - (enemy.enemyWidth) < 1) {//need to fix what's in the parenthesis
+                this.enemies.splice(eIdx, 1)
+            }
+    
             this.projectiles.forEach((projectile, pIdx) => {
-                const dist = Math.hypot(projectile.position1.x - enemy.x + (enemy.enemyWidth/2), projectile.position1.y - enemy.y - (enemy.enemyHeight/2));
-                if (dist - projectile.radius - (.25 * enemy.enemyWidth) < 1) {
+                const dist1 = Math.hypot(projectile.position1.x - enemy.x + (enemy.enemyWidth/2), projectile.position1.y - enemy.y - (enemy.enemyHeight/2));
+                const dist2 = Math.hypot(projectile.position2.x - enemy.x + (enemy.enemyWidth/2), projectile.position2.y - enemy.y - (enemy.enemyHeight/2));
+                debugger
+                if (dist1 - projectile.radius - (.25 * enemy.enemyWidth) < 1 || dist2 - projectile.radius - (.25 * enemy.enemyWidth) < 1) {
                     this.enemies.splice(eIdx, 1)
                     this.projectiles.splice(pIdx, 1)
                 }
