@@ -17,24 +17,21 @@ export default class Game {
         new Input(this);
     }
 
-    // this.x = x;
-    // this.y = y;
-    // // this.enemyWidth =  image pixels
-    // // this.enemyHeight = image pixels
-    // this.velocity = {};
-
     spawnEnemies() {//spawn senemies right side of the canvas
         setInterval(() => {
             const enemy = new Enemy(this);
             const angle = Math.atan2(this.spaceship.position.y - enemy.y, this.spaceship.position.x-enemy.x);
             enemy.velocity = {
-                x: Math.cos(angle) * 3,
-                y: Math.sin(angle) * 3
+                x: Math.cos(angle),
+                y: Math.sin(angle)
             };
 
             this.enemies.push(enemy);
         }, 2000)
     }
+
+    // this.enemyWidth = 50;
+    // this.enemyHeight = 35;
 
     update() {//updates everything
         this.spaceship.update();
@@ -43,8 +40,15 @@ export default class Game {
             projectile.update()
         });
 
-        this.enemies.forEach(enemy => {
+        this.enemies.forEach((enemy, eIdx) => {
             enemy.update()
+            this.projectiles.forEach((projectile, pIdx) => {
+                const dist = Math.hypot(projectile.position1.x - enemy.x + (enemy.enemyWidth/2), projectile.position1.y - enemy.y - (enemy.enemyHeight/2));
+                if (dist - projectile.radius - (.25 * enemy.enemyWidth) < 1) {
+                    this.enemies.splice(eIdx, 1)
+                    this.projectiles.splice(pIdx, 1)
+                }
+            })
         });
     }
 
