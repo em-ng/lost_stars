@@ -35,8 +35,10 @@ ul {
 }
 
 /* body */
-body #gameView {
+#gameView {
   border: 1px solid black;
+  margin-top: 100px;
+  margin-left: 150px;
 }
 
 img {

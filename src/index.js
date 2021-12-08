@@ -8,8 +8,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const ctx = canvas.getContext('2d');
     const GAME_WIDTH = 900;
     const GAME_HEIGHT = 550;
-    // const background = new Image();
-    // background.src ='./images/constellation_background.png'
+    const background = new Image();
+    background.src = '/images/constellation_background.png';
+    debugger
+
+    background.onload = function(){
+        console.log('drawImage');
+        ctx.drawImage(background,0,0);   
+    }
+    
     // background.onload = document.getElementById("background");
     // ctx.drawImage(background, 0, 0)
 

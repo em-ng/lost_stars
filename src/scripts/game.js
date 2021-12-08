@@ -47,7 +47,7 @@ export default class Game {
             this.projectiles.forEach((projectile, pIdx) => {
                 const dist1 = Math.hypot(projectile.position1.x - enemy.x + (enemy.enemyWidth/2), projectile.position1.y - enemy.y - (enemy.enemyHeight/2));
                 const dist2 = Math.hypot(projectile.position2.x - enemy.x + (enemy.enemyWidth/2), projectile.position2.y - enemy.y - (enemy.enemyHeight/2));
-                debugger
+                // debugger
                 if (dist1 - projectile.radius - (.25 * enemy.enemyWidth) < 1 || dist2 - projectile.radius - (.25 * enemy.enemyWidth) < 1) {
                     this.enemies.splice(eIdx, 1)
                     this.projectiles.splice(pIdx, 1)

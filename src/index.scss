@@ -34,13 +34,13 @@ ul {
 
 /* body */
 
-body #gameView {
+#gameView {
     border: 1px solid black;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
+    margin-top: 100px;
+    margin-left: 150px;
 }
 
 img {
   display: none;
 }
+
