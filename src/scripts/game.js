@@ -10,6 +10,7 @@ export default class Game {
         this.projectiles = [];
         this.enemies = [];
         this.spaceship = new Spaceship(this); //takes in a game instance
+        this.score = 0;
         // this.enemy = new Enemy(this);
     }
 
@@ -37,12 +38,19 @@ export default class Game {
             projectile.update()
         });
 
+        // this.enemies.forEach((enemy, eIdx) => {
+        //     const dist = Math.hypot(this.spaceship.position.x - enemy.x + (enemy.enemyWidth/2), this.spaceship.position.y - enemy.y - (enemy.enemyHeight/2));
+        //     if (dist - (enemy.enemyWidth) < 1 || dist - (enemy.enemyWidth) < 1) {//need to fix what's in the parenthesis
+        //         this.enemies.splice(eIdx, 1)
+        //     }
+        // }
+
         this.enemies.forEach((enemy, eIdx) => {
-            enemy.update()
-            const dist = Math.hypot(this.spaceship.position.x - enemy.x + (enemy.enemyWidth/2), this.spaceship.position.y - enemy.y - (enemy.enemyHeight/2));
-            if (dist - (enemy.enemyWidth) < 1 || dist - (enemy.enemyWidth) < 1) {//need to fix what's in the parenthesis
-                this.enemies.splice(eIdx, 1)
-            }
+            enemy.update();
+            // const dist = Math.hypot(this.spaceship.position.x - enemy.x + (enemy.enemyWidth/2), this.spaceship.position.y - enemy.y - (enemy.enemyHeight/2));
+            // if (dist - (enemy.enemyWidth) < 1 || dist - (enemy.enemyWidth) < 1) {//need to fix what's in the parenthesis
+            //     this.enemies.splice(eIdx, 1)
+            // }
     
             this.projectiles.forEach((projectile, pIdx) => {
                 const dist1 = Math.hypot(projectile.position1.x - enemy.x + (enemy.enemyWidth/2), projectile.position1.y - enemy.y - (enemy.enemyHeight/2));
@@ -51,12 +59,34 @@ export default class Game {
                 if (dist1 - projectile.radius - (.25 * enemy.enemyWidth) < 1 || dist2 - projectile.radius - (.25 * enemy.enemyWidth) < 1) {
                     this.enemies.splice(eIdx, 1)
                     this.projectiles.splice(pIdx, 1)
+                    this.score += 1;
                 }
             })
-        });
+        })
     }
 
+    stats() {
+        const points = document.getElementById("score");
+        points.innerText = `Score: ${this.score}`
+    }
+
+    // background() {
+    //     const background = new Image();
+    //     background.src = './images/galaxy.jpeg';
+    //     // debugger
+    
+    //     background.onload = function(){
+    //         // console.log('drawImage');
+    //         ctx.drawImage(background,0,0);   
+    //     }
+        
+    //     // background.onload = document.getElementById("background");
+    //     // ctx.drawImage(background, position, 0, 0);
+
+    // }
+
     draw(ctx) {//draw everything
+        // this.background();
         this.spaceship.draw(ctx);
         this.projectiles.forEach(projectile => {
             projectile.draw(ctx)

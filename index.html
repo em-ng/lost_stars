@@ -7,12 +7,25 @@
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
     <title>Lost Stars</title>
+    <style>body {
+        background-image: url('src/images/galaxy.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    </style>
 </head>
 <body>
 
     <img id="img_ship" src="src/images/ship.png">
     <img id="img_ban" src="src/images/banana_man.png">
-    <img id="background" src="src/images/constellation_background.png">
-    <canvas id="gameView" width="900" height="550"></canvas>    
+    <!-- <img id="background" src="src/images/galaxy.jpeg"> -->
+    <div>
+        <div id="score"><span>Score: 0</span></div>
+    </div>
+
+    <div>
+        <canvas id="gameView" width="900" height="550"></canvas>
+    </div>
+    
 </body>
 </html>

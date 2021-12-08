@@ -5,8 +5,7 @@ import Game from '/src/scripts/game';
 export default class Input {
     constructor(game) {
         document.addEventListener('keydown', (e) => {
-            console.log(e.key);
-
+            // console.log(e.key);
             switch(e.key) {
                 case "a":
                     game.spaceship.moveLeft();
