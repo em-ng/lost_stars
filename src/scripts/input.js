@@ -1,11 +1,8 @@
-// import Spaceship from '/src/scripts/spaceship';
-// import Projectile from '/src/scripts/projectile';
 import Game from '/src/scripts/game';
 
 export default class Input {
     constructor(game) {
         document.addEventListener('keydown', (e) => {
-            // console.log(e.key);
             switch(e.key) {
                 case "a":
                     game.spaceship.moveLeft();
@@ -54,29 +51,6 @@ export default class Input {
 
         window.addEventListener('click', (e) => {
             game.spaceship.fire(e);
-            // const projectile = new Projectile(game.spaceship);
-            // // const projectile2 = new Projectile(game.spaceship);
-            // game.projectiles.push(projectile);
-
-            // const angle = Math.atan2(e.clientY-projectile.position1.y, e.clientX-projectile.position1.x);
-            // // const angle2 = Math.atan2(e.clientY-projectile2.position2.y, e.clientX-projectile2.position2.x);
-
-            // projectile.velocity = {
-            //     x: Math.cos(angle) * 5,
-            //     y: Math.sin(angle) * 5
-            // }
-
-            // projectile2.velocity = {
-            //     x: Math.cos(angle2),
-            //     y: Math.sin(angle2)
-            // }
         })
-
-        // window.addEventListener("click", function(event) {
-        //     const canvasEl = document.getElementById('gameView');
-        //     const ctx = canvasEl.getContext('2d');
-        //     ctx.fillStyle = '#000';
-        //     ctx.fillRect(event.clientX, event.clientY, 10, 10);
-        // }) /// just adds a box when it clicks TEST FOR WHERE I AM CLICKING?
     }
 }

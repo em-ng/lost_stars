@@ -1,4 +1,3 @@
-// import Spaceship from '/src/scripts/spaceship';
 import Projectile from '/src/scripts/projectile';
 import Game from '/src/scripts/game';
 
@@ -15,7 +14,6 @@ export default class Enemy {
 
     draw(ctx) {
         ctx.drawImage(this.image, this.x, this.y);
-        // ctx.fillRect(this.x, this.y, 25, 25);
     }
     
     update() {

@@ -9,7 +9,7 @@ export default class Game {
         this.gameHeight = gameHeight;
         this.projectiles = [];
         this.enemies = [];
-        this.spaceship = new Spaceship(this); //takes in a game instance
+        this.spaceship = new Spaceship(this);
         this.score = 0;
         this.lives = 3;
         // this.enemy = new Enemy(this);
@@ -18,11 +18,6 @@ export default class Game {
     start() {
         new Input(this);
     }
-
-    // removeIntro() {
-    //     const instructions = document.getElementById("instructions_modal");
-    //     instructions.style.display = "none";
-    // }
 
     spawnEnemies() {//spawn enemies right side of the canvas
         setInterval(() => {
@@ -37,7 +32,7 @@ export default class Game {
         }, 2000)
     }
 
-    draw(ctx) {//draw everything
+    draw(ctx) {
         const bg = new Image();
         bg.src = "src/images/spacejunk.jpeg";
         ctx.globalAlpha = 0.8;
@@ -52,7 +47,7 @@ export default class Game {
         });
     }
 
-    update(ctx) {//updates everything
+    update(ctx) {
         this.spaceship.update();
 
         this.projectiles.forEach(projectile => {
