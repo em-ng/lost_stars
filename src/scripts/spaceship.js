@@ -75,13 +75,13 @@ export default class Spaceship {
 
 
     fire(e) {
-        const projectile = new Projectile(this);
-        this.game.projectiles.push(projectile);
-
         const rect = this.canvas.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
+
+        const projectile = new Projectile(this);
+        this.game.projectiles.push(projectile);
+
         const angle = Math.atan2(y-projectile.position1.y, x-projectile.position1.x);
         projectile.velocity = {
             x: Math.cos(angle) * 5,

@@ -60,7 +60,7 @@ export default class Game {
             const dist = Math.hypot(this.spaceship.position.x - enemy.x + (enemy.enemyWidth/2), this.spaceship.position.y - enemy.y - (enemy.enemyHeight/2));
             if (dist - (enemy.enemyWidth) < 1 || dist - (enemy.enemyWidth) < 1) {//need to fix what's in the parenthesis
                 this.enemies.splice(eIdx, 1)
-                this.lives -=1;
+                if (this.lives > 0) this.lives -=1;
             }
             //enemy and projectile collision    
             this.projectiles.forEach((projectile, pIdx) => {
@@ -81,5 +81,8 @@ export default class Game {
     stats() {
         const points = document.getElementById("score-container");
         points.innerText = `Score: ${this.score}`
+
+        const life = document.getElementById("lives-container");
+        life.innerText = `Lives: ${this.lives}`
     }
 }

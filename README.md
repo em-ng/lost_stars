@@ -23,6 +23,11 @@ In addition, this project will include:
 - Controls will include a mute button to turn the background music on or off
 - Options will allow the player to restart or exit the game
 
+## Projectile Calculation
+- An interesting set of code involves the projectile calculations as it takes into account the position of the spaceship and where the player clicks to find the angle:
+
+<img src="src/images/code.png">
+
 ## Technologies, Libraries, APIs
 - Canvas API
 - Javascript
@@ -30,6 +35,5 @@ In addition, this project will include:
 - CSS
 
 ## Future Considerations
-- make different enemies with various difficulty levels
 - add levels to unlock more constellations
-- design a page that showcases the constellations unlocked
+- make different enemies with various difficulty levels
