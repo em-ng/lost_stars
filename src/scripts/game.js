@@ -33,9 +33,13 @@ export default class Game {
 
     draw(ctx) {//draw everything
         // this.background();
-        // const background = new Image();
-        // background.src = './images/spacejunk.jpeg';
-        // ctx.drawImage(background, 0, 0, this.gameWidth, this.gameHeight);
+        this.stats();
+        // this.background(ctx);
+        const bg = new Image();
+        bg.src = "src/images/spacejunk.jpeg";
+        ctx.globalAlpha = 0.8;
+        ctx.drawImage(bg, 0, 0, 900, 550);
+
         this.spaceship.draw(ctx);
         this.projectiles.forEach(projectile => {
             projectile.draw(ctx)
@@ -45,7 +49,7 @@ export default class Game {
         });
     }
 
-    update() {//updates everything
+    update(ctx) {//updates everything
         this.spaceship.update();
 
         this.projectiles.forEach(projectile => {
@@ -63,7 +67,7 @@ export default class Game {
             this.projectiles.forEach((projectile, pIdx) => {
                 const dist1 = Math.hypot(projectile.position1.x - enemy.x + (enemy.enemyWidth/2), projectile.position1.y - enemy.y - (enemy.enemyHeight/2));
                 const dist2 = Math.hypot(projectile.position2.x - enemy.x + (enemy.enemyWidth/2), projectile.position2.y - enemy.y - (enemy.enemyHeight/2));
-                // debugger
+                
                 if (dist1 - projectile.radius - (.25 * enemy.enemyWidth) < 1 || dist2 - projectile.radius - (.25 * enemy.enemyWidth) < 1) {
                     this.enemies.splice(eIdx, 1)
                     this.projectiles.splice(pIdx, 1)
@@ -71,25 +75,11 @@ export default class Game {
                 }
             })
         })
+        this.draw(ctx);
     }
 
     stats() {
         const points = document.getElementById("score-container");
         points.innerText = `Score: ${this.score}`
     }
-
-    // background(ctx) {
-    //     const bg = new Image();
-    //     bg.src = 'src/images/spacejunk.jpeg';
-    //     // debugger
-        
-    //     background.onload = function(){
-    //             // console.log('drawImage');
-    //             ctx.drawImage(bg,0,0,this.gameWidth, this.gameHeight);   
-    //         }
-    //     // ctx.drawImage(bg, 0, 0, this.gameWidth, this.gameHeight);
-            
-    //     // background.onload = document.getElementById("background");
-    //     // ctx.drawImage(background, position, 0, 0);
-    // }
 }

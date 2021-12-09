@@ -29,19 +29,19 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // let lastTime = 0;
     function animate() {
-        game.stats();
+        // game.stats();
         // let dT = currentTime - lastTime; //change in time, how much time has passed since
         // lastTime = currentTime; //reset lastTime so it can keep updating how much time passes in between
-        
-        // const background = new Image();
+    
+        requestAnimationFrame(animate);
 
         ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT); //clear each frame
+        game.update(ctx);
         // const background = new Image();
         // background.src = './images/spacejunk.jpeg';
         // ctx.drawImage(background, 0, 0, this.gameWidth, this.gameHeight);
-        game.draw(ctx);
-        game.update();
-        requestAnimationFrame(animate);
+        // game.draw(ctx);
+        // game.update(ctx);
     }
 
     animate();
