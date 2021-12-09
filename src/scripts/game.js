@@ -11,6 +11,7 @@ export default class Game {
         this.enemies = [];
         this.spaceship = new Spaceship(this); //takes in a game instance
         this.score = 0;
+        this.lives = 3;
         // this.enemy = new Enemy(this);
     }
 
@@ -18,7 +19,12 @@ export default class Game {
         new Input(this);
     }
 
-    spawnEnemies() {//spawn senemies right side of the canvas
+    // removeIntro() {
+    //     const instructions = document.getElementById("instructions_modal");
+    //     instructions.style.display = "none";
+    // }
+
+    spawnEnemies() {//spawn enemies right side of the canvas
         setInterval(() => {
             const enemy = new Enemy(this);
             const angle = Math.atan2(this.spaceship.position.y - enemy.y, this.spaceship.position.x-enemy.x);
@@ -32,9 +38,6 @@ export default class Game {
     }
 
     draw(ctx) {//draw everything
-        // this.background();
-        this.stats();
-        // this.background(ctx);
         const bg = new Image();
         bg.src = "src/images/spacejunk.jpeg";
         ctx.globalAlpha = 0.8;
@@ -62,6 +65,7 @@ export default class Game {
             const dist = Math.hypot(this.spaceship.position.x - enemy.x + (enemy.enemyWidth/2), this.spaceship.position.y - enemy.y - (enemy.enemyHeight/2));
             if (dist - (enemy.enemyWidth) < 1 || dist - (enemy.enemyWidth) < 1) {//need to fix what's in the parenthesis
                 this.enemies.splice(eIdx, 1)
+                this.lives -=1;
             }
             //enemy and projectile collision    
             this.projectiles.forEach((projectile, pIdx) => {
@@ -75,6 +79,7 @@ export default class Game {
                 }
             })
         })
+        this.stats();
         this.draw(ctx);
     }
 

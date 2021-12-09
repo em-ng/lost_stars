@@ -21,14 +21,29 @@
 
     <img id="img_ship" src="src/images/ship.png">
     <img id="img_ban" src="src/images/banana_man.png">
-    <!-- <img id="background" src="src/images/galaxy.jpeg"> -->
+
+    <!-- modal -->
+    <div class="instructions" id="instructions_modal" onClick="removeIntro()">
+      <div class="instructions_box">
+        <div class="instructions_text">
+            <h1>hello there!</h1>
+        </div>
+      </div>
+    </div>
+    <!-- end of modal -->
+
     <div>
         <div id="score-container"><span>Score: 0</span></div>
+        <div id="lives-container"><span>Lives: 3</span></div>
     </div>
 
     <div>
         <canvas id="gameView" width="900" height="550"></canvas>
     </div>
+    <script> function removeIntro() {
+        const instructions = document.getElementById("instructions_modal");
+        instructions.style.display = "none";
+    }</script>
     
 </body>
 </html>
