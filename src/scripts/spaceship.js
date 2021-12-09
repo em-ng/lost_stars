@@ -16,6 +16,7 @@ export default class Spaceship {
         this.maxSpeed = 5;
         this.xSpeed = 0;
         this.ySpeed = 0;
+        this.canvas = document.getElementById("gameView");
     }
 
     draw(ctx) {
@@ -72,13 +73,25 @@ export default class Spaceship {
         this.ySpeed = 0;
     }
 
+
     fire(e) {
         const projectile = new Projectile(this);
         // const projectile2 = new Projectile(game.spaceship);
         this.game.projectiles.push(projectile);
+        // const canvas = document.getElementById("gameView");
+        // console.log(canvas)
+        const rect = this.canvas.getBoundingClientRect();
 
-        const angle = Math.atan2(e.clientY-projectile.position1.y, e.clientX-projectile.position1.x);
+        // // debugger
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const angle = Math.atan2(y-projectile.position1.y, x-projectile.position1.x);
         // const angle2 = Math.atan2(e.clientY-projectile2.position2.y, e.clientX-projectile2.position2.x);
+        // console.log(e.clientX);
+        // console.log(e.clientY);
+
+
 
         projectile.velocity = {
             x: Math.cos(angle) * 5,

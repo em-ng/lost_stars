@@ -31,6 +31,20 @@ export default class Game {
         }, 2000)
     }
 
+    draw(ctx) {//draw everything
+        // this.background();
+        // const background = new Image();
+        // background.src = './images/spacejunk.jpeg';
+        // ctx.drawImage(background, 0, 0, this.gameWidth, this.gameHeight);
+        this.spaceship.draw(ctx);
+        this.projectiles.forEach(projectile => {
+            projectile.draw(ctx)
+        });
+        this.enemies.forEach(enemy => {
+            enemy.draw(ctx)
+        });
+    }
+
     update() {//updates everything
         this.spaceship.update();
 
@@ -38,20 +52,14 @@ export default class Game {
             projectile.update()
         });
 
-        // this.enemies.forEach((enemy, eIdx) => {
-        //     const dist = Math.hypot(this.spaceship.position.x - enemy.x + (enemy.enemyWidth/2), this.spaceship.position.y - enemy.y - (enemy.enemyHeight/2));
-        //     if (dist - (enemy.enemyWidth) < 1 || dist - (enemy.enemyWidth) < 1) {//need to fix what's in the parenthesis
-        //         this.enemies.splice(eIdx, 1)
-        //     }
-        // }
-
         this.enemies.forEach((enemy, eIdx) => {
             enemy.update();
-            // const dist = Math.hypot(this.spaceship.position.x - enemy.x + (enemy.enemyWidth/2), this.spaceship.position.y - enemy.y - (enemy.enemyHeight/2));
-            // if (dist - (enemy.enemyWidth) < 1 || dist - (enemy.enemyWidth) < 1) {//need to fix what's in the parenthesis
-            //     this.enemies.splice(eIdx, 1)
-            // }
-    
+            //enemy and ship collision
+            const dist = Math.hypot(this.spaceship.position.x - enemy.x + (enemy.enemyWidth/2), this.spaceship.position.y - enemy.y - (enemy.enemyHeight/2));
+            if (dist - (enemy.enemyWidth) < 1 || dist - (enemy.enemyWidth) < 1) {//need to fix what's in the parenthesis
+                this.enemies.splice(eIdx, 1)
+            }
+            //enemy and projectile collision    
             this.projectiles.forEach((projectile, pIdx) => {
                 const dist1 = Math.hypot(projectile.position1.x - enemy.x + (enemy.enemyWidth/2), projectile.position1.y - enemy.y - (enemy.enemyHeight/2));
                 const dist2 = Math.hypot(projectile.position2.x - enemy.x + (enemy.enemyWidth/2), projectile.position2.y - enemy.y - (enemy.enemyHeight/2));
@@ -66,33 +74,22 @@ export default class Game {
     }
 
     stats() {
-        const points = document.getElementById("score");
+        const points = document.getElementById("score-container");
         points.innerText = `Score: ${this.score}`
     }
 
-    // background() {
-    //     const background = new Image();
-    //     background.src = './images/galaxy.jpeg';
+    // background(ctx) {
+    //     const bg = new Image();
+    //     bg.src = 'src/images/spacejunk.jpeg';
     //     // debugger
-    
-    //     background.onload = function(){
-    //         // console.log('drawImage');
-    //         ctx.drawImage(background,0,0);   
-    //     }
         
+    //     background.onload = function(){
+    //             // console.log('drawImage');
+    //             ctx.drawImage(bg,0,0,this.gameWidth, this.gameHeight);   
+    //         }
+    //     // ctx.drawImage(bg, 0, 0, this.gameWidth, this.gameHeight);
+            
     //     // background.onload = document.getElementById("background");
     //     // ctx.drawImage(background, position, 0, 0);
-
     // }
-
-    draw(ctx) {//draw everything
-        // this.background();
-        this.spaceship.draw(ctx);
-        this.projectiles.forEach(projectile => {
-            projectile.draw(ctx)
-        });
-        this.enemies.forEach(enemy => {
-            enemy.draw(ctx)
-        });
-    }
 }
