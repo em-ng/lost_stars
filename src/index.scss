@@ -62,17 +62,35 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(212, 152, 212, 0.5);
+  background: rgba(139, 101, 139, 0.5);
   z-index: 1;
 }
 
 #instructions_modal {
   display: block;
+  padding-right: 0%;
 }
 
 .instructions_box {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+  margin: 10% auto;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(43, 24, 43, 0.7);
+  width: 600px;
+  height: 200px;
+  top: 100px;
+  box-shadow: 2px 2px 4px 2px rgb(193, 169, 202);
+  padding: 20px 30px 30px 30px;
+}
+
+.instructions_text section, p {
+  font: 100;
+  font-weight: lighter;
+  font-family: fantasy;
+  color:rgb(193, 169, 202);
 }
 
 #score-container {

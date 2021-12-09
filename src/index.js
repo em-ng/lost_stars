@@ -10,19 +10,14 @@ document.addEventListener("DOMContentLoaded", function() {
     game.start();
     game.spawnEnemies();
     
-    // let spaceship = new Spaceship(GAME_WIDTH, GAME_HEIGHT);
-    // new Input(spaceship);
-    
     // let lastTime = 0;
     function animate() {
-        // let dT = currentTime - lastTime; //change in time, how much time has passed since
-        // lastTime = currentTime; //reset lastTime so it can keep updating how much time passes in between
+        // let dT = currentTime - lastTime;
+        // lastTime = currentTime;
         requestAnimationFrame(animate);
-        ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT); //clear each frame
+        ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
         game.update(ctx);
     }
-
     animate();
-
 })
 
