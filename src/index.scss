@@ -34,14 +34,28 @@ ul {
 
 /* body */
 
-#gameView {
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
+.canvas-container {
+  // border: 2px solid orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  // align-items: center;
+
+  max-width: 900px;
+  #gameView {
+    // padding-left: 0;
+    // padding-right: 0;
+    // margin-left: auto;
+    // margin-right: auto;
+    margin-top: 10px;
     display: block;
+    // display: flex;
+    justify-content: center;
+    // align-items: center;
     box-shadow: 0px 0px 5px 2px lavender;
+  }
 }
 
 #title {
@@ -49,10 +63,11 @@ ul {
   justify-content: center;
   color: lavender;
   text-shadow: 2px 3px rgba(145, 59, 145, 0.945);
-  font-size: 75px;
+  font-size: 70px;
   font-family: 'Courier New';
   font-weight: bold;
-  padding-top: 10px;
+  // padding-top: 10px;
+  // border: 2px solid blue;
 }
 
 .instructions {
@@ -89,26 +104,30 @@ ul {
 .instructions_text section, p {
   font: 100;
   font-weight: lighter;
-  font-family: fantasy;
+  // font-family: fantasy;
   color:rgb(193, 169, 202);
 }
 
 #score-container {
   display:flex;
-  justify-content: center;
-  margin-right: 53%;
-  left: 30px;
-  font-size: 18px;
+  justify-content: flex-start;
+  // justify-content: center;
+  // margin-right: 53%;
+  // left: 30px;
+  font-size: 16px;
   font-weight: bold;
   color:lavender;
   font-family: 'Courier New';
+  // border: 2px solid orange;
 }
+
 #lives-container {
   display:flex;
-  justify-content: center;
-  margin-right: 53%;
-  left: 30px;
-  font-size: 18px;
+  justify-content: flex-start;
+  // justify-content: center;
+  // margin-right: 53%;
+  // left: 30px;
+  font-size: 16px;
   font-weight: bold;
   color:lavender;
   font-family: 'Courier New';
@@ -116,6 +135,7 @@ ul {
 
 #background {
   display: none;
+  // border: 2px solid fuchsia;
 }
 
 #img_ship {
