@@ -116,3 +116,7 @@ ul {
 #img_ban {
   display: none;
 }
+
+#game-over {
+  visibility: hidden;
+}

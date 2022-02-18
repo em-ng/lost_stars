@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let game = new Game(GAME_WIDTH, GAME_HEIGHT);
     game.start();
-    game.spawnEnemies();
+    // game.spawnEnemies();
     
     // let lastTime = 0;
     function animate() {
@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //     animate();
     // })
 
+    // animate();
     
     function closeModal() {
         const instructions = document.getElementById("instructions_modal");
@@ -36,5 +37,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("instructions_modal").addEventListener("click", function () {
         closeModal();
     })
+   
 })
 

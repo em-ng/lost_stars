@@ -11,36 +11,66 @@ export default class Game {
         this.enemies = [];
         this.spaceship = new Spaceship(this);
         this.score = 0;
-        this.lives = 3;
+        this.lives = 1;
+        this.gameState = true;
         // this.spawnInterval = this.spawnEnemies();
         // this.gameEnd = false;
         // this.enemy = new Enemy(this);
     }
 
     start() {
-        new Input(this);
+        if (this.gameState) {
+            console.log('game start')
+
+            new Input(this);
+            this.spawnEnemies();
+        }
     }
 
-    // gameOver() {
-    //     this.gameEnd = true;
+    gameOver() {
+        // this.gameState = false;
+        // this.projectiles = [];
+        // this.enemies = [];
+        // clearInterval(this.spawnInterval)
+        // cancelAnimationFrame();
+        
+        if (this.gameState) {
+            console.log('game over')
+            this.gameState = false;
+            this.projectiles = [];
+            this.enemies = [];
 
-    //     clearInterval(1)        
-    // }
+        }
+    }
+
+    reset() {
+        console.log('restart game')
+        this.gameState = true;
+        this.spaceship = new Spaceship(this);
+        this.projectiles = [];
+        this.enemies = [];
+        this.score = 0;
+        this.lives = 1;
+    }
 
     spawnEnemies() {//spawn enemies right side of the canvas
-        // const enemyInterval =
-        setInterval(() => {
-            const enemy = new Enemy(this);
-            const angle = Math.atan2(this.spaceship.position.y - enemy.y, this.spaceship.position.x-enemy.x);
-            enemy.velocity = {
-                x: Math.cos(angle),
-                y: Math.sin(angle)
-            };
+        // const intervId =
+        // if (!this.gameState) return; 
+        if (this.gameState) {
+            console.log(this.gameState)
+            setInterval(() => {
+                const enemy = new Enemy(this);
+                const angle = Math.atan2(this.spaceship.position.y - enemy.y, this.spaceship.position.x-enemy.x);
+                enemy.velocity = {
+                    x: Math.cos(angle),
+                    y: Math.sin(angle)
+                };
+    
+                this.enemies.push(enemy);
+            }, 2000);
+        }
 
-            this.enemies.push(enemy);
-        }, 2000);
-
-        // return enemyInterval
+        // return intervId
     }
 
     draw(ctx) {
@@ -73,10 +103,10 @@ export default class Game {
                 this.enemies.splice(eIdx, 1)
                 if (this.lives > 0) {
                     this.lives -=1                    
-                } 
-                // else if (this.lives === 0) {
-                //     cancelAnimationFrame();
-                // }
+                } else {
+                    // cancelAnimationFrame();
+                    this.gameOver();
+                }
             }
             //enemy and projectile collision    
             this.projectiles.forEach((projectile, pIdx) => {

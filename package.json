@@ -24,6 +24,8 @@
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
+    "@fortawesome/free-solid-svg-icons": "^6.0.0",
+    "@fortawesome/react-fontawesome": "^0.1.17",
     "babel-loader": "^8.2.3",
     "core-js": "^3.19.2",
     "css-loader": "^6.5.1",
