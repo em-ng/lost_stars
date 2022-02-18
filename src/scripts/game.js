@@ -105,7 +105,10 @@ export default class Game {
                     this.lives -=1                    
                 } else {
                     // cancelAnimationFrame();
-                    this.gameOver();
+                    // this.gameOver();
+                    let message = document.getElementById("game-over");
+                    message.style.visibility = "visible"
+                    window.clearInterval(1)
                 }
             }
             //enemy and projectile collision    
