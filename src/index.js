@@ -26,6 +26,15 @@ document.addEventListener("DOMContentLoaded", function() {
     //     animate();
     // })
 
-    animate();
+    
+    function closeModal() {
+        const instructions = document.getElementById("instructions_modal");
+        instructions.style.display = "none";
+        animate();
+    }
+
+    document.getElementById("instructions_modal").addEventListener("click", function () {
+        closeModal();
+    })
 })
 

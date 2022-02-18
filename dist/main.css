@@ -58,6 +58,7 @@ ul {
   font-size: 96px;
   font-family: "Courier New";
   font-weight: bold;
+  padding-top: 10px;
 }
 
 .modal-background {
