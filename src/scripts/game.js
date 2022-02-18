@@ -12,6 +12,8 @@ export default class Game {
         this.spaceship = new Spaceship(this);
         this.score = 0;
         this.lives = 3;
+        // this.spawnInterval = this.spawnEnemies();
+        // this.gameEnd = false;
         // this.enemy = new Enemy(this);
     }
 
@@ -19,7 +21,14 @@ export default class Game {
         new Input(this);
     }
 
+    // gameOver() {
+    //     this.gameEnd = true;
+
+    //     clearInterval(1)        
+    // }
+
     spawnEnemies() {//spawn enemies right side of the canvas
+        // const enemyInterval =
         setInterval(() => {
             const enemy = new Enemy(this);
             const angle = Math.atan2(this.spaceship.position.y - enemy.y, this.spaceship.position.x-enemy.x);
@@ -29,7 +38,9 @@ export default class Game {
             };
 
             this.enemies.push(enemy);
-        }, 2000)
+        }, 2000);
+
+        // return enemyInterval
     }
 
     draw(ctx) {
@@ -49,7 +60,7 @@ export default class Game {
 
     update(ctx) {
         this.spaceship.update();
-
+        // console.log(this.gameEnd)
         this.projectiles.forEach(projectile => {
             projectile.update()
         });
@@ -60,19 +71,25 @@ export default class Game {
             const dist = Math.hypot(this.spaceship.position.x - enemy.x + (enemy.enemyWidth/2), this.spaceship.position.y - enemy.y - (enemy.enemyHeight/2));
             if (dist - (enemy.enemyWidth) < 1 || dist - (enemy.enemyWidth) < 1) {//need to fix what's in the parenthesis
                 this.enemies.splice(eIdx, 1)
-                if (this.lives > 0) this.lives -=1;
+                if (this.lives > 0) {
+                    this.lives -=1                    
+                } 
+                // else if (this.lives === 0) {
+                //     cancelAnimationFrame();
+                // }
             }
             //enemy and projectile collision    
             this.projectiles.forEach((projectile, pIdx) => {
                 const dist1 = Math.hypot(projectile.position1.x - enemy.x + (enemy.enemyWidth/2), projectile.position1.y - enemy.y - (enemy.enemyHeight/2));
                 const dist2 = Math.hypot(projectile.position2.x - enemy.x + (enemy.enemyWidth/2), projectile.position2.y - enemy.y - (enemy.enemyHeight/2));
                 
-                if (dist1 - projectile.radius - (.25 * enemy.enemyWidth) < 1 || dist2 - projectile.radius - (.25 * enemy.enemyWidth) < 1) {
+                if (dist1 - projectile.radius - (.05 * enemy.enemyWidth) < 1 || dist2 - projectile.radius - (.05 * enemy.enemyWidth) < 1) {
                     this.enemies.splice(eIdx, 1)
                     this.projectiles.splice(pIdx, 1)
                     this.score += 1;
+                    // this.draw(ctx);
                 }
-            })
+            })  
         })
         this.stats();
         this.draw(ctx);
