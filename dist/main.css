@@ -44,7 +44,7 @@ ul {
   max-width: 900px;
 }
 .canvas-container #gameView {
-  margin-top: 10px;
+  margin-top: 26px;
   display: block;
   justify-content: center;
   box-shadow: 0px 0px 5px 2px lavender;
@@ -55,13 +55,12 @@ ul {
   justify-content: center;
   color: lavender;
   text-shadow: 2px 3px rgba(145, 59, 145, 0.945);
-  font-size: 70px;
+  font-size: 96px;
   font-family: "Courier New";
   font-weight: bold;
 }
 
-.instructions {
-  display: none;
+.modal-background {
   position: fixed;
   top: 0;
   left: 0;
@@ -73,50 +72,40 @@ ul {
 
 #instructions_modal {
   display: block;
-  padding-right: 0%;
 }
 
-.instructions_box {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-  margin: 10% auto;
-  justify-content: space-between;
-  align-items: center;
+.modal-child {
   background-color: rgba(43, 24, 43, 0.7);
-  width: 600px;
-  height: 200px;
-  top: 100px;
   box-shadow: 2px 2px 4px 2px #c1a9ca;
   padding: 20px 30px 30px 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .instructions_text section, p {
-  font: 100;
-  font-weight: lighter;
   color: #c1a9ca;
 }
 
 #score-container {
   display: flex;
   justify-content: flex-start;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   color: lavender;
   font-family: "Courier New";
+  padding-top: 5px;
 }
 
 #lives-container {
   display: flex;
   justify-content: flex-start;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   color: lavender;
   font-family: "Courier New";
-}
-
-#background {
-  display: none;
+  padding-top: 5px;
 }
 
 #img_ship {

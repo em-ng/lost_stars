@@ -47,7 +47,7 @@ export default class Game {
         const bg = new Image();
         bg.src = "src/images/spacejunk.jpeg";
         ctx.globalAlpha = 0.8;
-        ctx.drawImage(bg, 0, 0, 900, 500);
+        ctx.drawImage(bg, 0, 0, 900, 550);
 
         this.spaceship.draw(ctx);
         this.projectiles.forEach(projectile => {

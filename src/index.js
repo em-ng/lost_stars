@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const canvas = document.getElementById("gameView");
     const ctx = canvas.getContext('2d');
     const GAME_WIDTH = 900;
-    const GAME_HEIGHT = 500;
+    const GAME_HEIGHT = 550;
     let music = new Audio("src/music/life-is-a-dream.mp3");
     let button = document.getElementById("unmuteButton");
     music.play();
