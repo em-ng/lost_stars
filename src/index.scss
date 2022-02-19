@@ -1,3 +1,13 @@
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,600;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+
+
+
+
+
+
 /* css reset */
 html, head, body, header,
 nav, h1, a, ul, li, main,
@@ -34,23 +44,42 @@ ul {
 
 /* body */
 
-.canvas-container {
-  // border: 2px solid orange;
+.main-container {
   display: flex;
-  flex-direction: column;
+  // border: 2px solid blue;
+  align-items: center;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 900px;
-  // border: 2px solid orange;
-  #gameView {
-    margin-top: 26px;
-    display: block;
-    // display: flex;
+  .canvas-container {
+    // border: 2px solid orange;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    max-width: 900px;
     // align-items: center;
-    box-shadow: 0px 0px 5px 2px lavender;
-    // border: 2px solid blue;
+    // margin-left: auto;
+    // margin-right: auto;
+    #gameView {
+      margin-top: 18px;
+      // border: 2px solid blue;
+      display: block;
+      justify-content: center;
+      box-shadow: 0px 0px 5px 2px lavender;
+    }
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    // border: 2px solid white;
+    margin-top: 40px;
+    button {
+      padding: 30px;
+      background: none;
+      border: none;
+    }
+    img {
+      cursor: pointer;
+    }
   }
 }
 
@@ -58,13 +87,13 @@ ul {
 #title {
   display: flex;
   justify-content: center;
-  color: lavender;
-  text-shadow: 2px 3px rgba(145, 59, 145, 0.945);
-  font-size: 96px;
-  font-family: 'Courier New';
+  color: rgb(202, 197, 211);
+  text-shadow: 6px 4px 5px #974697;
+  font-size: 94px;
+  font-family: 'Pacifico', cursive;
   font-weight: bold;
   // font-style: italic;
-  padding-top: 10px;
+  // padding-top: 10px;
   // border: 2px solid blue;
 }
 
@@ -75,7 +104,7 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(139, 101, 139, 0.5);
+  background: rgba(230, 198, 230, 0.5);
   z-index: 1;
 }
 
@@ -91,25 +120,36 @@ ul {
   // margin: 10% auto;
   // justify-content: space-between;
   // align-items: center;
-  background-color: rgba(43, 24, 43, 0.7);
-  // width: 600px;
-  // height: 200px;
-  // top: 100px;
-  box-shadow: 2px 2px 4px 2px rgb(193, 169, 202);
-  padding: 20px 30px 30px 30px;
-  // border: 2px solid blue;
   position: absolute;
+  background-color: rgba(43, 24, 43, 0.7);
+  width: 400px;
+  height: 150px;
+  // top: 100px;
+  box-shadow: 0px 0px 17px 7px rgb(238, 211, 247);
+  padding: 40px 40px;
+  // border: 2px solid blue;
   top: 50%;
-  left: 50%;
+  left: 46%;
   transform: translate(-50%, -50%);
 }
 
-.instructions_text section, p {
-  // font: 100;
-  // font-weight: lighter;
-  // font-family: fantasy;
-  color:rgb(193, 169, 202);
+.instructions-text {
+  // display: flex;
+  // border: 2px solid blue; 
+  p {
+
+    color:rgb(193, 169, 202);
+    font-size: 20px;
+    font-family: 'Akaya Telivigala', cursive;
+    line-height: 1.33;
+  }
+  .center-text {
+    // border: 2px solid orange;
+    display: flex;
+    justify-content: center;
+  }
 }
+
 
 #score-container {
   display: flex;
@@ -117,7 +157,7 @@ ul {
   font-size: 18px;
   font-weight: bold;
   color:lavender;
-  font-family: 'Courier New';
+  font-family: 'Bitter', serif;
   padding-top: 5px;
 }
 
@@ -127,7 +167,7 @@ ul {
   font-size: 18px;
   font-weight: bold;
   color:lavender;
-  font-family: 'Courier New';
+  font-family: 'Bitter', serif;
   padding-top: 5px;
 }
 
@@ -141,6 +181,7 @@ ul {
 
 #img_ban {
   display: none;
+  // border: 2px solid yellow;
 }
 
 #game-over {
@@ -148,9 +189,19 @@ ul {
   border: 2px solid blue;
 }
 
-.side-button {
-  background: none;
-  border: none;
+.nav-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+  .linkedin {
+    width: 70px;
+    height: 70px;
+  }
+  .github {
+    width: 56px;
+    height: 56px;
+  }
 }
 
 

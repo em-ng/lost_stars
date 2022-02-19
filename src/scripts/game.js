@@ -13,9 +13,7 @@ export default class Game {
         this.score = 0;
         this.lives = 1;
         this.gameState = true;
-        // this.spawnInterval = this.spawnEnemies();
-        // this.gameEnd = false;
-        // this.enemy = new Enemy(this);
+        this.enemy = new Enemy(this);
     }
 
     start() {
@@ -60,7 +58,7 @@ export default class Game {
         // if (!this.gameState) return; 
         if (this.gameState) {
             console.log(this.gameState)
-            // setInterval(() => {
+            setInterval(() => {
                 const enemy = new Enemy(this);
                 const angle = Math.atan2(this.spaceship.position.y - enemy.y, this.spaceship.position.x-enemy.x);
                 enemy.velocity = {
@@ -69,10 +67,8 @@ export default class Game {
                 };
     
                 this.enemies.push(enemy);
-            // }, 2000);
+            }, 2000);
         }
-
-        // return intervId
     }
 
     draw(ctx) {
@@ -89,6 +85,10 @@ export default class Game {
             enemy.draw(ctx)
         });
     }
+
+    // frameRate(ctx) {
+    //     setInterval(this.draw(ctx), 120)
+    // }
 
     update(ctx) {
         this.spaceship.update();
@@ -118,7 +118,7 @@ export default class Game {
                 const dist1 = Math.hypot(projectile.position1.x - enemy.x + (enemy.enemyWidth/2), projectile.position1.y - enemy.y - (enemy.enemyHeight/2));
                 const dist2 = Math.hypot(projectile.position2.x - enemy.x + (enemy.enemyWidth/2), projectile.position2.y - enemy.y - (enemy.enemyHeight/2));
                 
-                if (dist1 - projectile.radius - (.05 * enemy.enemyWidth) < 1 || dist2 - projectile.radius - (.05 * enemy.enemyWidth) < 1) {
+                if ((dist1 - projectile.radius - (enemy.enemyWidth - 45) < 1) || (dist2 - projectile.radius - (enemy.enemyWidth - 45) < 1)) {
                     this.enemies.splice(eIdx, 1)
                     this.projectiles.splice(pIdx, 1)
                     this.score += 1;
@@ -128,6 +128,7 @@ export default class Game {
         })
         this.stats();
         this.draw(ctx);
+        // this.frameRate(ctx);
     }
 
     stats() {

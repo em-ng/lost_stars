@@ -1,6 +1,18 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Pacifico&display=swap);
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (1) ***!
+  \*****************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap);
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (2) ***!
+  \*****************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap);
+/*!*****************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss (3) ***!
+  \*****************************************************************************************************************************************/
 /* css reset */
 html, head, body, header,
 nav, h1, a, ul, li, main,
@@ -35,30 +47,45 @@ ul {
 }
 
 /* body */
-.canvas-container {
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-container .canvas-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
   max-width: 900px;
 }
-.canvas-container #gameView {
-  margin-top: 26px;
+.main-container .canvas-container #gameView {
+  margin-top: 18px;
   display: block;
   justify-content: center;
   box-shadow: 0px 0px 5px 2px lavender;
+}
+.main-container .sidebar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.main-container .sidebar button {
+  padding: 30px;
+  background: none;
+  border: none;
+}
+.main-container .sidebar img {
+  cursor: pointer;
 }
 
 #title {
   display: flex;
   justify-content: center;
-  color: lavender;
-  text-shadow: 2px 3px rgba(145, 59, 145, 0.945);
-  font-size: 96px;
-  font-family: "Courier New";
+  color: #cac5d3;
+  text-shadow: 6px 4px 5px #974697;
+  font-size: 94px;
+  font-family: "Pacifico", cursive;
   font-weight: bold;
-  padding-top: 10px;
 }
 
 .modal-background {
@@ -67,7 +94,7 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(139, 101, 139, 0.5);
+  background: rgba(230, 198, 230, 0.5);
   z-index: 1;
 }
 
@@ -76,17 +103,26 @@ ul {
 }
 
 .modal-child {
-  background-color: rgba(43, 24, 43, 0.7);
-  box-shadow: 2px 2px 4px 2px #c1a9ca;
-  padding: 20px 30px 30px 30px;
   position: absolute;
+  background-color: rgba(43, 24, 43, 0.7);
+  width: 400px;
+  height: 150px;
+  box-shadow: 0px 0px 17px 7px #eed3f7;
+  padding: 40px 40px;
   top: 50%;
-  left: 50%;
+  left: 46%;
   transform: translate(-50%, -50%);
 }
 
-.instructions_text section, p {
+.instructions-text p {
   color: #c1a9ca;
+  font-size: 20px;
+  font-family: "Akaya Telivigala", cursive;
+  line-height: 1.33;
+}
+.instructions-text .center-text {
+  display: flex;
+  justify-content: center;
 }
 
 #score-container {
@@ -95,7 +131,7 @@ ul {
   font-size: 18px;
   font-weight: bold;
   color: lavender;
-  font-family: "Courier New";
+  font-family: "Bitter", serif;
   padding-top: 5px;
 }
 
@@ -105,7 +141,7 @@ ul {
   font-size: 18px;
   font-weight: bold;
   color: lavender;
-  font-family: "Courier New";
+  font-family: "Bitter", serif;
   padding-top: 5px;
 }
 
@@ -122,7 +158,17 @@ ul {
   border: 2px solid blue;
 }
 
-.side-button {
-  background: none;
-  border: none;
+.nav-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+}
+.nav-links .linkedin {
+  width: 70px;
+  height: 70px;
+}
+.nav-links .github {
+  width: 56px;
+  height: 56px;
 }
