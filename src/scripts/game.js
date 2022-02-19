@@ -43,11 +43,6 @@ export default class Game {
         // }
     }
 
-    // restart() {
-    //     const message = document.getElementById('game-over');
-    //     message.style.visibility = 'visible'
-    // }
-
     spawnEnemies() {//spawn enemies right side of the canvas
         // const intervId =
         // if (!this.gameState) return; 
