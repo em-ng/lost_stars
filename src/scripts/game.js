@@ -11,7 +11,7 @@ export default class Game {
         this.enemies = [];
         this.spaceship = new Spaceship(this);
         this.score = 0;
-        this.lives = 1;
+        this.lives = 3;
         this.gameState = true;
         this.enemy = new Enemy(this);
     }

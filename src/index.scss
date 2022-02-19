@@ -187,10 +187,10 @@ ul {
   // border: 2px solid yellow;
 }
 
-#hello {
-  visibility: visible;
-  display: block;
-}
+// #hello {
+  // visibility: visible;
+  // display: block;
+// }
 
 .nav-links {
   display: flex;
@@ -221,9 +221,9 @@ ul {
   color:rgb(193, 169, 202);
   background-color: rgba(43, 24, 43, 0.7);
   border-radius: 40px 0 40px 0;
-  
+  box-shadow: 0px 0px 17px 7px rgb(238, 211, 247);  
   font-family: 'Akaya Telivigala', cursive;
-  left: 35%;
+  left: 37%;
   // border: 2px solid blue;
   a {
     display: flex;

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const music = new Audio("src/music/life-is-a-dream.mp3");
     const button = document.getElementById("musicButton");
     const instructionButton = document.getElementById("instruct");
-    let text = false;
+    // let text = false;
     // let musicState = false;
     // music.play();
 

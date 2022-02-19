@@ -160,11 +160,6 @@ ul {
   display: none;
 }
 
-#hello {
-  visibility: visible;
-  display: block;
-}
-
 .nav-links {
   display: flex;
   justify-content: space-evenly;
@@ -193,8 +188,9 @@ ul {
   color: #c1a9ca;
   background-color: rgba(43, 24, 43, 0.7);
   border-radius: 40px 0 40px 0;
+  box-shadow: 0px 0px 17px 7px #eed3f7;
   font-family: "Akaya Telivigala", cursive;
-  left: 35%;
+  left: 37%;
 }
 #game-over a {
   display: flex;
