@@ -84,8 +84,8 @@ export default class Spaceship {
 
         const angle = Math.atan2(y-projectile.position1.y, x-projectile.position1.x);
         projectile.velocity = {
-            x: Math.cos(angle) * 6,
-            y: Math.sin(angle) * 6
+            x: Math.cos(angle) * 5,
+            y: Math.sin(angle) * 5
         }
     }
 }

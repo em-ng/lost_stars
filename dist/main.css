@@ -74,6 +74,9 @@ ul {
   background: none;
   border: none;
 }
+.main-container .sidebar button:visited {
+  border: none;
+}
 .main-container .sidebar img {
   cursor: pointer;
 }
@@ -81,11 +84,14 @@ ul {
 #title {
   display: flex;
   justify-content: center;
+  align-items: center;
   color: #cac5d3;
   text-shadow: 6px 4px 5px #974697;
   font-size: 94px;
   font-family: "Pacifico", cursive;
   font-weight: bold;
+  margin-top: 10px;
+  height: 120px;
 }
 
 .modal-background {
@@ -132,7 +138,6 @@ ul {
   font-weight: bold;
   color: lavender;
   font-family: "Bitter", serif;
-  padding-top: 5px;
 }
 
 #lives-container {
@@ -142,7 +147,7 @@ ul {
   font-weight: bold;
   color: lavender;
   font-family: "Bitter", serif;
-  padding-top: 5px;
+  padding-top: 2px;
 }
 
 #img_ship {

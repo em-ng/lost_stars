@@ -50,19 +50,7 @@
       <p id="lives-container">Lives: 1</p>
       <canvas id="gameView" width="900" height="550"></canvas>
 
-      <div class="modal-background" id="instructions_modal">
-        <div class="modal-child">
-          <div class="instructions-text">
-              <p>
-                Click to shoot and navigate through space using the keys 'WASD' to save the constellations from falling into eternal darkness...before it's too late! 
-              </p>
-              <p class="center-text">(Psst..some peels may take more than one hit)</p>
-              <br />              
-              <p class="center-text">Click to continue</p>
-              <!-- grab instruction by class and change visibility to hidden -->
-          </div>
-        </div>
-      </div>
+      
 
     
       <!-- <div id="game-over"> 
@@ -73,9 +61,23 @@
     </div>
       
     <div class="sidebar">
-      <button class="side-button" id="musicButton"><img src="/src/images/play-button.png"/></button>
+      <button class="side-button" id="musicButton"><img src='/src/images/pause-button.png' /></button>
       <a href="index.html"><button class="side-button" id="restart"><img src="/src/images/restart.png"/></button></a>
       <button class="side-button" id="instruct"><img src="/src/images/about.png"/></button>
+    </div>
+  </div>
+
+  <div class="modal-background" id="instructions_modal">
+    <div class="modal-child">
+      <div class="instructions-text">
+          <p>
+            Navigate through space using the keys 'WASD' and click to shoot to save the constellations from falling into eternal darkness...before it's too late! 
+          </p>
+          <p class="center-text">(Psst..some peels may take more than one hit)</p>
+          <br />              
+          <p class="center-text">{ Click anywhere to continue }</p>
+          <!-- grab instruction by class and change visibility to hidden -->
+      </div>
     </div>
   </div>
     

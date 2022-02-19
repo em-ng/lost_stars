@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const GAME_HEIGHT = 550;
     const music = new Audio("src/music/life-is-a-dream.mp3");
     const button = document.getElementById("musicButton");
+    const instructionButton = document.getElementById("instruct");
+    let text = false;
     // let musicState = false;
     // music.play();
 
@@ -28,15 +30,29 @@ document.addEventListener("DOMContentLoaded", function() {
     //     }
     // }
 
-    button.addEventListener('click',(e) => {
+    button.addEventListener('click', (e) => {
         if (music.paused) {
             music.play();
-            button.innerHTML = "<img src='/src/images/play-button.png' />"
+            button.innerHTML = "<img src='/src/images/pause-button.png' />"
         } else {
             music.pause();
-            button.innerHTML = "<img src='/src/images/pause-button.png' />"
+            button.innerHTML = "<img src='/src/images/play-button.png' />"
         }
     });
+
+    instructionButton.addEventListener('click', (e) => {
+        const instructions = document.getElementById("instructions_modal");
+        const display = instructions.style.display
+        if (display === "none") {
+            openModal();
+        } else {
+            closeInstructions();
+            // instructions.style.display = "none";
+            // console.log('close window')
+        }
+    });
+
+
 
     // function pauseMusic() {
     //     music.pause();
@@ -62,18 +78,22 @@ document.addEventListener("DOMContentLoaded", function() {
         ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
         game.update(ctx);
     }
-
-    // document.getElementById("start-btn").addEventListener("click", function () { grab instructionmodal, onclick
-    //     animate();
-    // })
-
-    // animate();
     
+    function openModal() {
+        const instructions = document.getElementById("instructions_modal");
+        instructions.style.display = "block";
+    }
+
     function closeModal() {
         const instructions = document.getElementById("instructions_modal");
         instructions.style.display = "none";
         animate();
         music.play();
+    }
+
+    function closeInstructions() {
+        const instructions = document.getElementById("instructions_modal");
+        instructions.style.display = "none";
     }
 
     document.getElementById("instructions_modal").addEventListener("click", function () {

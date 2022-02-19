@@ -107,8 +107,8 @@ export default class Game {
                     this.lives -=1                    
                 } else {
                     this.gameOver();
-                    let message = document.getElementById("game-over");
-                    message.style.visibility = "visible"
+                    // let message = document.getElementById("game-over");
+                    // message.style.visibility = "visible"
                     // cancelAnimationFrame();
                     // window.clearInterval(1)
                 }
