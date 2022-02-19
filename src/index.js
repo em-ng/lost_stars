@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
 
     let game = new Game(GAME_WIDTH, GAME_HEIGHT);
-    game.start();
+    // game.start();
     // game.spawnEnemies();
     
     // let lastTime = 0;
@@ -78,6 +78,8 @@ document.addEventListener("DOMContentLoaded", function() {
         ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
         game.update(ctx);
     }
+
+    animate();
     
     function openModal() {
         const instructions = document.getElementById("instructions_modal");
@@ -87,8 +89,8 @@ document.addEventListener("DOMContentLoaded", function() {
     function closeModal() {
         const instructions = document.getElementById("instructions_modal");
         instructions.style.display = "none";
-        animate();
         music.play();
+        game.start();
     }
 
     function closeInstructions() {
