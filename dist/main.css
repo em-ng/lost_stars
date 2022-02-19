@@ -160,6 +160,11 @@ ul {
   display: none;
 }
 
+#hello {
+  visibility: visible;
+  display: block;
+}
+
 .nav-links {
   display: flex;
   justify-content: space-evenly;

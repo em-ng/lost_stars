@@ -187,6 +187,11 @@ ul {
   // border: 2px solid yellow;
 }
 
+#hello {
+  visibility: visible;
+  display: block;
+}
+
 .nav-links {
   display: flex;
   justify-content: space-evenly;
