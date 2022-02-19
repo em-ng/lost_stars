@@ -59,6 +59,7 @@ ul {
       display: block;
       justify-content: center;
       box-shadow: 0px 0px 5px 2px lavender;
+      border-radius: 8px;
     }
   }
 
@@ -71,6 +72,7 @@ ul {
       padding: 30px;
       background: none;
       border: none;
+      // border: 2px solid orange;
     }
     button:visited {
       border: none;
@@ -124,6 +126,7 @@ ul {
   background-color: rgba(43, 24, 43, 0.7);
   width: 400px;
   height: 150px;
+  border-radius: 40px 0 40px 0;
   // top: 100px;
   box-shadow: 0px 0px 17px 7px rgb(238, 211, 247);
   padding: 40px 40px;
@@ -184,11 +187,6 @@ ul {
   // border: 2px solid yellow;
 }
 
-#game-over {
-  visibility: hidden;
-  border: 2px solid blue;
-}
-
 .nav-links {
   display: flex;
   justify-content: space-evenly;
@@ -201,6 +199,40 @@ ul {
   .github {
     width: 56px;
     height: 56px;
+  }
+}
+
+#game-over {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: center;
+  position: absolute;
+  width: 300px;
+  height: 110px;
+  padding: 15px 30px;
+  font-size: 26px;
+  color:rgb(193, 169, 202);
+  background-color: rgba(43, 24, 43, 0.7);
+  border-radius: 40px 0 40px 0;
+  
+  font-family: 'Akaya Telivigala', cursive;
+  left: 35%;
+  // border: 2px solid blue;
+  a {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  button {
+    border: none;
+    background: none;
+    padding: none;
+    font-size: 18px;
+    color:rgb(193, 169, 202);
+    font-family: 'Akaya Telivigala', cursive;
+    cursor: pointer;
   }
 }
 

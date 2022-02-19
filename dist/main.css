@@ -63,6 +63,7 @@ ul {
   display: block;
   justify-content: center;
   box-shadow: 0px 0px 5px 2px lavender;
+  border-radius: 8px;
 }
 .main-container .sidebar {
   display: flex;
@@ -113,6 +114,7 @@ ul {
   background-color: rgba(43, 24, 43, 0.7);
   width: 400px;
   height: 150px;
+  border-radius: 40px 0 40px 0;
   box-shadow: 0px 0px 17px 7px #eed3f7;
   padding: 40px 40px;
   top: 50%;
@@ -158,11 +160,6 @@ ul {
   display: none;
 }
 
-#game-over {
-  visibility: hidden;
-  border: 2px solid blue;
-}
-
 .nav-links {
   display: flex;
   justify-content: space-evenly;
@@ -176,4 +173,35 @@ ul {
 .nav-links .github {
   width: 56px;
   height: 56px;
+}
+
+#game-over {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  width: 300px;
+  height: 110px;
+  padding: 15px 30px;
+  font-size: 26px;
+  color: #c1a9ca;
+  background-color: rgba(43, 24, 43, 0.7);
+  border-radius: 40px 0 40px 0;
+  font-family: "Akaya Telivigala", cursive;
+  left: 35%;
+}
+#game-over a {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+#game-over button {
+  border: none;
+  background: none;
+  padding: none;
+  font-size: 18px;
+  color: #c1a9ca;
+  font-family: "Akaya Telivigala", cursive;
+  cursor: pointer;
 }

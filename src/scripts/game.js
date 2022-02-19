@@ -18,8 +18,6 @@ export default class Game {
 
     start() {
         if (this.gameState) {
-            console.log('game start')
-
             new Input(this);
             this.spawnEnemies();
         }
@@ -33,24 +31,21 @@ export default class Game {
         // cancelAnimationFrame();
         
         // if (this.gameState) {
-            console.log('game over')
+            // console.log('game over')
             this.gameState = false;
+            // cancelAnimationFrame(this.spawnEnemies());
+            const message = document.getElementById('game-over');
+            message.style.visibility = 'visible'
+            window.clearInterval(1)
             this.projectiles = [];
             this.enemies = [];
-            cancelAnimationFrame(this.spawnEnemies());
-            // window.clearInterval(1)
 
         // }
     }
 
-    // reset() {
-    //     console.log('restart game')
-    //     this.gameState = true;
-    //     this.spaceship = new Spaceship(this);
-    //     this.projectiles = [];
-    //     this.enemies = [];
-    //     this.score = 0;
-    //     this.lives = 1;
+    // restart() {
+    //     const message = document.getElementById('game-over');
+    //     message.style.visibility = 'visible'
     // }
 
     spawnEnemies() {//spawn enemies right side of the canvas
@@ -107,10 +102,6 @@ export default class Game {
                     this.lives -=1                    
                 } else {
                     this.gameOver();
-                    // let message = document.getElementById("game-over");
-                    // message.style.visibility = "visible"
-                    // cancelAnimationFrame();
-                    // window.clearInterval(1)
                 }
             }
             //enemy and projectile collision    
