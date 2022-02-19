@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const GAME_WIDTH = 900;
     const GAME_HEIGHT = 550;
     const music = new Audio("src/music/life-is-a-dream.mp3");
-    const button = document.getElementById("unmuteButton");
-    let musicState = false;
+    const button = document.getElementById("musicButton");
+    // let musicState = false;
     // music.play();
 
     // function toggleMusic() {
@@ -31,8 +31,10 @@ document.addEventListener("DOMContentLoaded", function() {
     button.addEventListener('click',(e) => {
         if (music.paused) {
             music.play();
+            button.innerHTML = "<img src='/src/images/play-button.png' />"
         } else {
             music.pause();
+            button.innerHTML = "<img src='/src/images/pause-button.png' />"
         }
     });
 
@@ -71,9 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const instructions = document.getElementById("instructions_modal");
         instructions.style.display = "none";
         animate();
-        // musicState = true;
-        // music.play();
-        // playMusic();
+        music.play();
     }
 
     document.getElementById("instructions_modal").addEventListener("click", function () {

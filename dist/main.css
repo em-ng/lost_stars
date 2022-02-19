@@ -121,3 +121,8 @@ ul {
   visibility: hidden;
   border: 2px solid blue;
 }
+
+.side-button {
+  background: none;
+  border: none;
+}

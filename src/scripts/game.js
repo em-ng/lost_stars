@@ -34,31 +34,33 @@ export default class Game {
         // clearInterval(this.spawnInterval)
         // cancelAnimationFrame();
         
-        if (this.gameState) {
+        // if (this.gameState) {
             console.log('game over')
             this.gameState = false;
             this.projectiles = [];
             this.enemies = [];
+            cancelAnimationFrame(this.spawnEnemies());
+            // window.clearInterval(1)
 
-        }
+        // }
     }
 
-    reset() {
-        console.log('restart game')
-        this.gameState = true;
-        this.spaceship = new Spaceship(this);
-        this.projectiles = [];
-        this.enemies = [];
-        this.score = 0;
-        this.lives = 1;
-    }
+    // reset() {
+    //     console.log('restart game')
+    //     this.gameState = true;
+    //     this.spaceship = new Spaceship(this);
+    //     this.projectiles = [];
+    //     this.enemies = [];
+    //     this.score = 0;
+    //     this.lives = 1;
+    // }
 
     spawnEnemies() {//spawn enemies right side of the canvas
         // const intervId =
         // if (!this.gameState) return; 
         if (this.gameState) {
             console.log(this.gameState)
-            setInterval(() => {
+            // setInterval(() => {
                 const enemy = new Enemy(this);
                 const angle = Math.atan2(this.spaceship.position.y - enemy.y, this.spaceship.position.x-enemy.x);
                 enemy.velocity = {
@@ -67,7 +69,7 @@ export default class Game {
                 };
     
                 this.enemies.push(enemy);
-            }, 2000);
+            // }, 2000);
         }
 
         // return intervId
@@ -104,11 +106,11 @@ export default class Game {
                 if (this.lives > 0) {
                     this.lives -=1                    
                 } else {
-                    // cancelAnimationFrame();
-                    // this.gameOver();
+                    this.gameOver();
                     let message = document.getElementById("game-over");
                     message.style.visibility = "visible"
-                    window.clearInterval(1)
+                    // cancelAnimationFrame();
+                    // window.clearInterval(1)
                 }
             }
             //enemy and projectile collision    

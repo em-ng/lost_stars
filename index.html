@@ -54,12 +54,20 @@
       <!-- <div id="score-container"><span>Score: 0</span></div>
       <div id="lives-container"><span>Lives: 3</span></div> -->
       <canvas id="gameView" width="900" height="550"></canvas>
-
-      <div class="nav-links">
-        <a href="https://github.com/em-ng" target="_blank"><i id="nav-icon" class="fa fa-github-alt"></i> </a> 
-        <a href="https://www.linkedin.com/in/em-ng/" target="_blank"><i id="nav-icon" class="fa fa-linkedin"></i></a>
+      
+      <div class="sidebar">
+        <button class="side-button" id="musicButton"><img src="/src/images/play-button.png"/></button>
+        <button class="side-button" id="restart"><img src="/src/images/restart.png"/></button>
+        <button class="side-button" id="instruct"><img src="/src/images/about.png"/></button>
       </div>
     </div>
+    
+    <div class="nav-links">
+      <a href="https://github.com/em-ng" target="_blank"><i id="nav-icon" class="fa fa-github-alt"></i> </a> 
+      <a href="https://www.linkedin.com/in/em-ng/" target="_blank"><i id="nav-icon" class="fa fa-linkedin"></i></a>
+    </div>
+    
+    
 
     <div class="modal-background" id="instructions_modal">
       <div class="modal-child">
@@ -71,6 +79,9 @@
         </div>
       </div>
     </div>
+
+    
+    
 
     <!-- <div id="game-over-background">
       <div class="game-over-child">
@@ -106,15 +117,9 @@
       }
     </script> -->
 
-    <!-- <video id="video" muted="true"> -->
-    <button id="unmuteButton">Unmute</button>
     
-    <script>
-      // unmuteButton.addEventListener('click', function() {
-        // const mu = document.getElementById("video")
-        // mu.muted = false;
-      // });
-    </script>
+    
+    
     
 </body>
 </html>
