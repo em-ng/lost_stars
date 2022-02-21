@@ -53,19 +53,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 
-
-    // function pauseMusic() {
-    //     music.pause();
-    //     musicState = false;
-    // }
-
-    // function playMusic() {
-    //     music.play();
-    //     musicState = true;
-    // }
-
-  
-
     let game = new Game(GAME_WIDTH, GAME_HEIGHT);
     // game.start();
     // game.spawnEnemies();
