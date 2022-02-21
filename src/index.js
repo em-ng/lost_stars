@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function() {
     button.addEventListener('click', (e) => {
         if (music.paused) {
             music.play();
-            button.innerHTML = "<img src='https://github.com/em-ng/lost_stars/blob/c912a410e23ddc6562595650b63641a345927a99/src/images/pause-button.png' />"
+            button.innerHTML = "<img src='https://user-images.githubusercontent.com/91646944/155014901-7ad749cb-d10b-4d8a-854d-f13235391af6.png' />"
         } else {
             music.pause();
-            button.innerHTML = "<img src='https://github.com/em-ng/lost_stars/blob/bd50d120b3c2c1fcc9d0488175f376ed6d16f823/src/images/play-button.png' />"
+            button.innerHTML = "<img src='https://user-images.githubusercontent.com/91646944/155014830-6474962e-0395-4253-8d38-cae191c93acb.png' />"
         }
     });
 
