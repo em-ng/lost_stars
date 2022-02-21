@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function() {
     button.addEventListener('click', (e) => {
         if (music.paused) {
             music.play();
-            button.innerHTML = "<img src='/src/images/pause-button.png' />"
+            button.innerHTML = "<img src='/github.io/src/images/pause-button.png' />"
         } else {
             music.pause();
-            button.innerHTML = "<img src='/src/images/play-button.png' />"
+            button.innerHTML = "<img src='/github.io/src/images/play-button.png' />"
         }
     });
 
