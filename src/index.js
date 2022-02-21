@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function() {
     button.addEventListener('click', (e) => {
         if (music.paused) {
             music.play();
-            button.innerHTML = "<img src='https://github.com/em-ng/lost_stars/blob/c912a410e23ddc6562595650b63641a345927a99/src/images/pause-button.png' />"
+            button.innerHTML = "<img src='src/images/pause-button.png' />"
         } else {
             music.pause();
-            button.innerHTML = "<img src='https://github.com/em-ng/lost_stars/blob/c912a410e23ddc6562595650b63641a345927a99/src/images/play-button.png' />"
+            button.innerHTML = "<img src='src/images/play-button.png' />"
         }
     });
 
