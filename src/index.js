@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function() {
     button.addEventListener('click', (e) => {
         if (music.paused) {
             music.play();
-            button.innerHTML = "<img src='https://user-images.githubusercontent.com/91646944/155014901-7ad749cb-d10b-4d8a-854d-f13235391af6.png' />"
+            button.innerHTML = "<img src='src/images/pause-button.png' />"
         } else {
             music.pause();
-            button.innerHTML = "<img src='https://user-images.githubusercontent.com/91646944/155014830-6474962e-0395-4253-8d38-cae191c93acb.png' />"
+            button.innerHTML = "<img src='src/images/play-button.png' />"
         }
     });
 
