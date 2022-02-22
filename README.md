@@ -2,6 +2,8 @@
 
 Lost Stars is a 2D shooting game where the player navigates through space to save the constellations from eternal darkness while defending itself from incoming enemies.
 
+<img src="src/images/cover.png">
+
 ## Functionality and MVPs
 
 In Lost Stars, players will be able to:
