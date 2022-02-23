@@ -70,10 +70,6 @@ ul {
   flex-direction: column;
   margin-top: 40px;
 }
-.main-container .sidebar a {
-  width: 64px;
-  height: 64px;
-}
 .main-container .sidebar button {
   padding: 30px;
   background: none;
